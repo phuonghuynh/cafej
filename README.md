@@ -1,0 +1,4 @@
+cafej
+=====
+
+Useful javascript functions
