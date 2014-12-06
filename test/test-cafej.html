@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="../bower_components/jquery/dist/jquery.min.js" language="JavaScript"></script>
+  <script src="../src/micro-observer.js" language="JavaScript"></script>
+  <script src="test-cafej.js" language="JavaScript"></script>
+</head>
+<body>
+<p>
+  <h3>Test micro-observer.js</h3>
+  <br />
+  <div>
+    <span>Dog: </span>
+    <input id="dog" type="text" width="100px" />
+    <input type="button" value="wou" onclick="dog.wou($('#dog').val())" />
+    <br />
+    <span>Man: </span><span id="man"></span>
+  </div>
+</p>
+</body>
+
+</html>

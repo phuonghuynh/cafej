@@ -1,7 +1,15 @@
 cafej
 ========
 
-##extarray
+##History
+###v1.0
+Added libraries:
+
+1. extarray.js
+2. micro-observer.js
+
+
+##extarray.js
 Javascript Array extension
 
 Added some functions to js array
@@ -13,5 +21,7 @@ Added some functions to js array
 5. `array.distinct()`: return an array without any duplicated value
 6. `array.findFirst(val, prop)`: return object/value which has value equal to `val`
 
+##micro-observer.js
+Javascript Observer implementation, @see
 
 **Please fell free to contribute.**
