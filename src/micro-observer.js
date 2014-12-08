@@ -1,11 +1,24 @@
+/**
+ * Observer Pattern javascript implementation [Observer](http://en.wikipedia.org/wiki/Observer_pattern)
+ *
+ * @module
+ * @example
+ *  ```js
+ *  var observer = $.microObserver.get("test-cafej");
+ *
+ *  var dog = {
+   *    wou: function(text) {
+   *      observer.send("wou", text);
+   *    }
+   *  }
+ *
+ *  observer.on("wou", function(text) {
+   *    $("#man").text(text);
+   *  });
+ *  ```
+ */
 (function () {
 
-  /**
-   * Observer Pattern javascript implementation [Observer](http://en.wikipedia.org/wiki/Observer_pattern)
-   *
-   * @class MicroObserver
-   * @memberof microObserver
-   */
   var MicroObserver = function () {};
 
   MicroObserver.prototype = {
@@ -82,25 +95,6 @@
 
   var observers = {}
 
-  /**
-   * Export to Jquery object
-   *
-   * @module $.microObserver
-   * @example
-   *  ```js
-   *  var observer = $.microObserver.get("test-cafej");
-   *
-   *  var dog = {
-   *    wou: function(text) {
-   *      observer.send("wou", text);
-   *    }
-   *  }
-   *
-   *  observer.on("wou", function(text) {
-   *    $("#man").text(text);
-   *  });
-   *  ```
-   */
   $.microObserver = {
     create: function (name) {
       observers[name] = new MicroObserver();
