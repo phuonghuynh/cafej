@@ -1,13 +1,13 @@
 cafej
 ========
-Useful Javascript libraries like a very good cafe-cup
+Useful Javascript libraries like a very delicious cafe-cup
 
 ##History
 ###v1.0
 Added libraries:
 
-1. `extarray.js` - Javascript Array extension
-2. `micro-observer.js` - Javascript Observer implementation
+1. [`extarray.js`](src/extarray.js) - Javascript Array extension
+2. [`micro-observer.js`](src/micro-observer.js) - Javascript Observer implementation
 
 ##Documentation
 1. [extarray](api/extarray.md)

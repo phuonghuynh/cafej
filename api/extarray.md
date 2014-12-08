@@ -5,12 +5,24 @@ Javascript Array extension
 **Members**
 
 * [extarray](#module_extarray)
+  * [extarray~min()](#module_extarray..min)
+  * [extarray~max()](#module_extarray..max)
   * [extarray~minBy(prop)](#module_extarray..minBy)
   * [extarray~maxBy(prop)](#module_extarray..maxBy)
   * [extarray~toArray(prop)](#module_extarray..toArray)
   * [extarray~shuffle(prop)](#module_extarray..shuffle)
   * [extarray~findFirst(val, prop)](#module_extarray..findFirst)
 
+<a name="module_extarray..min"></a>
+##extarray~min()
+Return min value of value array
+
+**Scope**: inner function of [extarray](#module_extarray)  
+<a name="module_extarray..max"></a>
+##extarray~max()
+Return max value of value array
+
+**Scope**: inner function of [extarray](#module_extarray)  
 <a name="module_extarray..minBy"></a>
 ##extarray~minBy(prop)
 Return min value of objects which have property
