@@ -1,13 +1,12 @@
-/**
+/*
  * Observer Pattern javascript implementation [Observer](http://en.wikipedia.org/wiki/Observer_pattern)
- *
- * @class MicroObserver
- * @license MIT
  * @author Phuong Huynh <phuonghqh@gmail.com>
- * @copyright Phuong Huynh & contributors 2014
- */
+ * */
 (function () {
 
+  /**
+   * @class MicroObserver
+   */
   var MicroObserver = function () {};
 
   MicroObserver.prototype = {
@@ -15,14 +14,14 @@
     /**
      * Register event by notify
      *
-     * @method on
-     * @param notify {string} Name of the notification
-     * @param handler {function} Handler of the notification
-     * @param able {function} Able to receive notification
-     *  - return undefined or true - handler is invoked when notification coming
-     *  - return false - handler is not invoked when notification coming
+     * @func on
+     * @param {string} notify - name of the notification
+     * @param {MicroObserver~handler} handler - handler of the notification
+     * @param {MicroObserver~able} able - able to receive notification
      * @example
+     *  ```js
      *  MicroObserver.on("Say text", handler, able)
+     *  ```
      */
     on: function (notify, handler, able) {
       var self = this;
@@ -34,11 +33,13 @@
     /**
      * Unregister event by notify
      *
-     * @method off
+     * @func off
      * @param {string} notify - Name of the notification
-     * @param {function} handler - Handler of the notification
+     * @param {MicroObserver~handler} handler - Handler of the notification
      * @example
+     *  ```js
      *  MicroObserver.off("Say text", handler)
+     *  ```
      */
     off: function (notify, handler) {
       var self = this;
@@ -59,11 +60,13 @@
     /**
      * Send will send event by notify
      *
-     * @method send
+     * @func send
      * @param {string} notify - Name of the notification
-     * @param {*} arguments is passed to registered handler
+     * @param {...any} arguments is passed to registered {MicroObserver~handler}
      * @example
+     *  ```js
      *  MicroObserver.send("Say text", "tell me", "something", "to someone")
+     *  ```
      */
     send: function (notify /* , args... */) {
       var self = this;
@@ -90,3 +93,16 @@
     }
   }
 })();
+/**
+ * Handler of the notification
+ *
+ * @callback MicroObserver~handler
+ * @param {...any}
+ */
+/**
+ * Able to receive notification
+ *
+ * @callback MicroObserver~able
+ * @returns {undefined | true} handler is invoked when notification coming <br/>
+ * @returns {false} handler is not invoked when notification coming
+ */

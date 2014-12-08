@@ -6,6 +6,6 @@
     "grunt-contrib-connect": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-bower-install-simple": "latest",
-    "grunt-contrib-yuidoc": "latest"
+    "grunt-jsdoc-to-markdown": "latest"
   }
 }

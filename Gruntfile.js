@@ -44,16 +44,11 @@ module.exports = function (grunt) {
       }
     },
 
-    yuidoc: {
+    jsdoc2md: {
       main: {
-        name: '<%= pkg.name %>',
-        description: '<%= pkg.description %>',
-        version: '<%= pkg.version %>',
-        url: '<%= pkg.homepage %>',
-        options: {
-          paths: 'src',
-          outdir: 'doc'
-        }
+        files: [
+          {src: "src/*.js", dest: "api.md"}
+        ]
       }
     }
   });
@@ -62,8 +57,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-bower-install-simple");
   grunt.loadNpmTasks("grunt-contrib-yuidoc");
+  grunt.loadNpmTasks("grunt-jsdoc-to-markdown");
 
   // start a http server and serve at folder "test"
-  grunt.registerTask("default", ["bower-install-simple", "yuidoc", "connect", "watch"]);
-  grunt.registerTask("run", ["connect", "watch"]);
+  grunt.registerTask("default", ["bower-install-simple", "connect", "watch"]);
+  grunt.registerTask("export-api", ["jsdoc2md"]);
 };
