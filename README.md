@@ -9,8 +9,8 @@ Added libraries:
 2. `micro-observer.js` - Javascript Observer implementation
 
 ##Documentation
-- [extarray](doc/extarray.md)
-- [micro-observer](doc/micro-observer.md)
+1. [extarray](doc/extarray.md)
+2. [micro-observer](doc/micro-observer.md)
 
 ## License
 This project is licensed under the [MIT license](http://opensource.org/licenses/MIT).
