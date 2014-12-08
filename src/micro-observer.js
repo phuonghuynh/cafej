@@ -1,12 +1,10 @@
-/**
- * Observer Pattern javascript implementation [Observer](http://en.wikipedia.org/wiki/Observer_pattern)
- *
- * @module
- */
 (function () {
 
   /**
+   * Observer Pattern javascript implementation [Observer](http://en.wikipedia.org/wiki/Observer_pattern)
+   *
    * @class MicroObserver
+   * @memberof microObserver
    */
   var MicroObserver = function () {};
 
@@ -15,7 +13,7 @@
     /**
      * Register event by notify
      *
-     * @func on
+     * @member on
      * @param {string} notify - name of the notification
      * @param {MicroObserver~handler} handler - handler of the notification
      * @param {MicroObserver~able} able - able to receive notification
@@ -34,7 +32,7 @@
     /**
      * Unregister event by notify
      *
-     * @func off
+     * @member off
      * @param {string} notify - Name of the notification
      * @param {MicroObserver~handler} handler - Handler of the notification
      * @example
@@ -61,7 +59,7 @@
     /**
      * Send will send event by notify
      *
-     * @func send
+     * @member send
      * @param {string} notify - Name of the notification
      * @param {...any} arguments is passed to registered {MicroObserver~handler}
      * @example
@@ -83,6 +81,26 @@
   }
 
   var observers = {}
+
+  /**
+   * Export to Jquery object
+   *
+   * @module $.microObserver
+   * @example
+   *  ```js
+   *  var observer = $.microObserver.get("test-cafej");
+   *
+   *  var dog = {
+   *    wou: function(text) {
+   *      observer.send("wou", text);
+   *    }
+   *  }
+   *
+   *  observer.on("wou", function(text) {
+   *    $("#man").text(text);
+   *  });
+   *  ```
+   */
   $.microObserver = {
     create: function (name) {
       observers[name] = new MicroObserver();
