@@ -1,7 +1,8 @@
-/*
+/**
  * Observer Pattern javascript implementation [Observer](http://en.wikipedia.org/wiki/Observer_pattern)
- * @author Phuong Huynh <phuonghqh@gmail.com>
- * */
+ *
+ * @module
+ */
 (function () {
 
   /**

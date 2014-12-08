@@ -47,7 +47,8 @@ module.exports = function (grunt) {
     jsdoc2md: {
       main: {
         files: [
-          {src: "src/*.js", dest: "api.md"}
+          {src: "src/extarray.js", dest: "api/extarray.md"},
+          {src: "src/micro-observer.js", dest: "api/micro-observer.md"}
         ]
       }
     }
