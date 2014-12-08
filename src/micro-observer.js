@@ -80,7 +80,8 @@
      *  MicroObserver.send("Say text", "tell me", "something", "to someone")
      *  ```
      */
-    send: function (notify /* , args... */) {
+    send: function (/* arguments... */) {
+      var notify = arguments[0];
       var self = this;
       self.notifications = self.notifications || {};
       self.notifications[notify] = self.notifications[notify] || [];
