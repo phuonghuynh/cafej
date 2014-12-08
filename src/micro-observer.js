@@ -28,8 +28,8 @@
      *
      * @member on
      * @param {string} notify - name of the notification
-     * @param {MicroObserver~handler} handler - handler of the notification
-     * @param {MicroObserver~able} able - able to receive notification
+     * @param {handler} handler - handler of the notification
+     * @param {able} able - able to receive notification
      * @example
      *  ```js
      *  MicroObserver.on("Say text", handler, able)
@@ -47,7 +47,7 @@
      *
      * @member off
      * @param {string} notify - Name of the notification
-     * @param {MicroObserver~handler} handler - Handler of the notification
+     * @param {handler} handler - Handler of the notification
      * @example
      *  ```js
      *  MicroObserver.off("Say text", handler)
@@ -109,13 +109,13 @@
 /**
  * Handler of the notification
  *
- * @callback MicroObserver~handler
+ * @typedef handler
  * @param {...any}
  */
 /**
  * Able to receive notification
  *
- * @callback MicroObserver~able
+ * @typedef able
  * @returns {undefined | true} handler is invoked when notification coming <br/>
  * @returns {false} handler is not invoked when notification coming
  */
