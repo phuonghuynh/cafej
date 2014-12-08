@@ -1,5 +1,6 @@
 cafej
 ========
+Useful Javascript libraries like a very good cafe-cup
 
 ##History
 ###v1.0
