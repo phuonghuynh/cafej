@@ -1,7 +1,7 @@
 {
   "name": "cafej",
   "version": "1.0",
-  "main": ["src/extarray.js"],
+  "main": ["src/extarray.js", "src/micro-observer.js"],
   "authors": [
     "Phuong H <phuonghqh@gmail.com>"
   ],
