@@ -8,6 +8,9 @@ Added libraries:
 1. extarray.js
 2. micro-observer.js
 
+##API Documentation
+[API](http://github.com/phuonghuynh/cafej/api.md)
+
 
 ##extarray.js
 Javascript Array extension

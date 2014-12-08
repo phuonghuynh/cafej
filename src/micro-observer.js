@@ -1,32 +1,28 @@
 /**
- * micro-observer.js
- * Copyright (c) 2014 Phuong Huynh & contributors
+ * Observer Pattern javascript implementation [Observer](http://en.wikipedia.org/wiki/Observer_pattern)
  *
- * Licensed under the MIT License, Version 2.0 (the "License"); you may not use this
- * file except in compliance with the License. You may obtain a copy of the License at:
- * http://opensource.org/licenses/MIT
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
- * ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- *
+ * @class MicroObserver
+ * @license MIT
  * @author Phuong Huynh <phuonghqh@gmail.com>
+ * @copyright Phuong Huynh & contributors 2014
  */
-(function() {
+(function () {
+
   var MicroObserver = function () {};
 
   MicroObserver.prototype = {
+
     /**
-     * on will register event by notify
+     * Register event by notify
      *
-     * - ex: MicroObserver.on("Say text", handler, able)
-     *
-     * @param {notify} name of the notification
-     * @param {handler} handler function of the notification
-     * @param {able} function
-     *  - Is undefined or return True => {handler} is invoked when notification coming
-     *  - Return false => {handler} is not invoked when notification coming
+     * @method on
+     * @param notify {string} Name of the notification
+     * @param handler {function} Handler of the notification
+     * @param able {function} Able to receive notification
+     *  - return undefined or true - handler is invoked when notification coming
+     *  - return false - handler is not invoked when notification coming
+     * @example
+     *  MicroObserver.on("Say text", handler, able)
      */
     on: function (notify, handler, able) {
       var self = this;
@@ -36,12 +32,13 @@
     },
 
     /**
-     * off will unregister event by notify
+     * Unregister event by notify
      *
-     * - ex: MicroObserver.off("Say text", handler)
-     *
-     * @param {notify} name of the notification
-     * @param {handler} handler function of the notification
+     * @method off
+     * @param {string} notify - Name of the notification
+     * @param {function} handler - Handler of the notification
+     * @example
+     *  MicroObserver.off("Say text", handler)
      */
     off: function (notify, handler) {
       var self = this;
@@ -60,12 +57,13 @@
     },
 
     /**
-     * send will send event by notify
+     * Send will send event by notify
      *
-     * - ex: MicroObserver.send("Say text", "tell me", "something")
-     *
-     * @param {notify} name of the notification
-     * @param {args} arguments is passed to registered {handler}, @see on
+     * @method send
+     * @param {string} notify - Name of the notification
+     * @param {*} arguments is passed to registered handler
+     * @example
+     *  MicroObserver.send("Say text", "tell me", "something", "to someone")
      */
     send: function (notify /* , args... */) {
       var self = this;
@@ -82,11 +80,11 @@
 
   var observers = {}
   $.microObserver = {
-    create: function(name) {
+    create: function (name) {
       observers[name] = new MicroObserver();
       return observers[name];
     },
-    get: function(name) {
+    get: function (name) {
       var self = this;
       return observers[name] || self.create(name);
     }

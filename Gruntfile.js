@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
   grunt.initConfig({
+    pkg: grunt.file.readJSON('bower.json'),
     connect: {
       server: {
         options: {
@@ -41,14 +42,28 @@ module.exports = function (grunt) {
           production: true
         }
       }
+    },
+
+    yuidoc: {
+      main: {
+        name: '<%= pkg.name %>',
+        description: '<%= pkg.description %>',
+        version: '<%= pkg.version %>',
+        url: '<%= pkg.homepage %>',
+        options: {
+          paths: 'src',
+          outdir: 'doc'
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks("grunt-contrib-connect");
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-bower-install-simple");
+  grunt.loadNpmTasks("grunt-contrib-yuidoc");
 
   // start a http server and serve at folder "test"
-  grunt.registerTask("default", ["bower-install-simple", "connect", "watch"]);
+  grunt.registerTask("default", ["bower-install-simple", "yuidoc", "connect", "watch"]);
   grunt.registerTask("run", ["connect", "watch"]);
 };
