@@ -3,6 +3,10 @@ cafej
 Useful Javascript libraries like a very delicious cafe-cup
 
 ##History
+###v1.0.1
+Added library:
+- [`misc.js`](src/misc.js) - Expose miscellaneous functions to Jquery `$.misc`
+
 ###v1.0
 Added libraries:
 1. [`extarray.js`](src/extarray.js) - Javascript Array extension
