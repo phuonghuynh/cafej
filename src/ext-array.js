@@ -16,7 +16,7 @@ $.extend(Array.prototype, {
   min: function () {
     return this.reduce(function (x, y) {
       return ( x < y ? x : y );
-    });
+    }, 0);
   },
 
   /**
@@ -31,7 +31,7 @@ $.extend(Array.prototype, {
   max: function () {
     return this.reduce(function (x, y) {
       return ( x > y ? x : y );
-    });
+    }, 0);
   },
 
   /**
