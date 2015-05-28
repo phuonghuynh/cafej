@@ -8,3 +8,21 @@
     }
   }
 })();
+
+$.extend(Object.prototype, {
+
+  visit: function (obj, func) {
+    for (var prop in obj) {
+      func.apply(this, [prop, obj[prop]]);
+      if ($.type(obj[prop]) === "object") {
+        visit(obj[prop], func);
+      }
+      else if ($.type(obj[prop]) === "array") {
+        var array = obj[prop];
+        $.each(array, function (i, item) {
+          visit(item, func);
+        })
+      }
+    }
+  }
+});
