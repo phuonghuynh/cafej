@@ -2,6 +2,10 @@ dependencies:
   pre:
     - pip install awscli
 
+test:
+  override:
+    - echo 'no test'
+
 deployment:
   release:
     tag: /release-.*/
