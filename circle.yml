@@ -7,8 +7,8 @@ test:
     - echo 'no test'
 
 deployment:
-  cafej:
-    branch: master
+  release:
+    tag: /release-.*/
     commands:
       - aws s3 cp --recursive test/ s3://$S3_BUCKET/
 #  accessKeyId: "AKIAIIHSGTLODMQ7HWRA",
