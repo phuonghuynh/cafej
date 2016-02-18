@@ -1,0 +1,11 @@
+dependencies:
+  pre:
+    - pip install awscli
+
+deployment:
+  release:
+    tag: /release-.*/
+    commands:
+      - aws s3 cp --recursive test/ s3://$S3_BUCKET/
+#  accessKeyId: "AKIAIIHSGTLODMQ7HWRA",
+#  secretAccessKey: "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",
